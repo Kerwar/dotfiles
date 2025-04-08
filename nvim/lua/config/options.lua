@@ -59,7 +59,7 @@ vim.opt.wrap = false
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "120"
 
 vim.diagnostic.config({ virtual_lines = true })
 
