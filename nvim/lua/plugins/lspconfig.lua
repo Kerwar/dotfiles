@@ -37,8 +37,9 @@ return {
         -- Auto-format ("lint") on save.
         -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
         if
-          not client:supports_method("textDocument/willSaveWaitUntil")
-          and client:supports_method("textDocument/formatting")
+            not client:supports_method("textDocument/willSaveWaitUntil")
+            and client:supports_method("textDocument/formatting")
+            and client.name ~= "clangd"
         then
           vim.api.nvim_create_autocmd("BufWritePre", {
             group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
@@ -51,9 +52,9 @@ return {
 
         -- Creates a keymap to toggle inlay hints in your
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-          vim.map("<leader>th", function()
+          vim.keymap.set("n", "<leader>th", function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = args.buf }))
-          end, "[T]oggle Inlay [H]ints")
+          end, { desc = "[T]oggle Inlay [H]ints" })
         end
       end,
     })
