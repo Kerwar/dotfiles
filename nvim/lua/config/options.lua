@@ -63,6 +63,8 @@ vim.opt.colorcolumn = "100"
 
 vim.diagnostic.config({ virtual_lines = true })
 
+vim.o.winborder = "rounded"
+
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight text on yank",
   group = vim.api.nvim_create_augroup("HighlightOnYank", { clear = true }),
