@@ -1,0 +1,32 @@
+-- [[ Basic Keymaps ]]
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Diagnostic keymaps
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "[D]isplay [D]iagnostic" })
+
+vim.keymap.set("n", "<leader>dn", function()
+  vim.diagnostic.jump({ count = 1 })
+end, { desc = "[D]iagnostics [N]ext" })
+vim.keymap.set("n", "<leader>dp", function()
+  vim.diagnostic.jump({ count = -1 })
+end, { desc = "[D]iagnostics [P]revious" })
+
+vim.keymap.set("n", "<leader>en", function()
+  vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
+end, { desc = "[E]error [N]ext" })
+vim.keymap.set("n", "<leader>ep", function()
+  vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
+end, { desc = "[E]error [P]revious" })
+
+-- Exit terminal mode in the builtin terminal with an easier shortcut
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal mode" })
+vim.keymap.set("t", "jk", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal mode" })
+
+-- Keybinds to make split navigation easier.
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
