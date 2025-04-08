@@ -7,19 +7,12 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "[D]isplay [D]iagnostic" })
 
-vim.keymap.set("n", "<leader>dn", function()
-  vim.diagnostic.jump({ count = 1 })
-end, { desc = "[D]iagnostics [N]ext" })
-vim.keymap.set("n", "<leader>dp", function()
-  vim.diagnostic.jump({ count = -1 })
-end, { desc = "[D]iagnostics [P]revious" })
-
-vim.keymap.set("n", "<leader>en", function()
+vim.keymap.set("n", "<leader>ne", function()
   vim.diagnostic.jump({ count = 1, severity = vim.diagnostic.severity.ERROR })
-end, { desc = "[E]error [N]ext" })
-vim.keymap.set("n", "<leader>ep", function()
+end, { desc = "[N]ext [E]error" })
+vim.keymap.set("n", "<leader>pe", function()
   vim.diagnostic.jump({ count = -1, severity = vim.diagnostic.severity.ERROR })
-end, { desc = "[E]error [P]revious" })
+end, { desc = "[P]revious [E]error" })
 
 -- Exit terminal mode in the builtin terminal with an easier shortcut
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal mode" })
