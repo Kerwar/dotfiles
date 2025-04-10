@@ -12,7 +12,7 @@ return {
     },
     { "nvim-telescope/telescope-ui-select.nvim" },
 
-    { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+    { "nvim-tree/nvim-web-devicons",            enabled = vim.g.have_nerd_font },
   },
   -- tag = "0.1.x",
   config = function()
@@ -29,11 +29,12 @@ return {
     require("config.telescope.multigrep").setup()
   end,
   keys = {
-    { "<leader>ff", require("telescope.builtin").find_files, desc = "[F]ind [F]ile" },
-    { "<leader>fh", require("telescope.builtin").help_tags, desc = "[F]ind [H]elp" },
-    { "<leader>ft", require("telescope.builtin").builtin, desc = "[F]ind [T]elescope" },
-    { "<leader>fg", require("telescope.builtin").live_grep, desc = "[F]ind by [G]rep" },
-    { "<leader>fr", require("telescope.builtin").live_grep, desc = "[F]ind [R]esume" },
+    { "<leader>ff", require("telescope.builtin").find_files,  desc = "[F]ind [F]ile" },
+    { "<leader>fh", require("telescope.builtin").help_tags,   desc = "[F]ind [H]elp" },
+    { "<leader>ft", require("telescope.builtin").builtin,     desc = "[F]ind [T]elescope" },
+    { "<leader>fg", require("telescope.builtin").live_grep,   desc = "[F]ind by [G]rep" },
+    { "<leader>fw", require("telescope.builtin").grep_string, desc = "[F]ind [W]ord under cursor" },
+    { "<leader>fr", require("telescope.builtin").live_grep,   desc = "[F]ind [R]esume" },
     {
       "<leader>en",
       function()
