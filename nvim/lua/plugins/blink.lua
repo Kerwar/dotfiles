@@ -15,10 +15,9 @@ return {
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      nerd_font_variant = 'mono'
+      nerd_font_variant = 'mono',
     },
 
-    -- (Default) Only show the documentation popup when manually triggered
     completion = { documentation = { auto_show = false } },
   },
   opts_extend = { "sources.default" }

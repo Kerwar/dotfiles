@@ -22,10 +22,18 @@ return {
   },
 
   config = function()
-    require("lspconfig").lua_ls.setup({})
-    require("lspconfig").clangd.setup({})
+    vim.lsp.enable({ 'lua_ls', 'clangd', 'cmake' })
+    vim.lsp.enable('zls')
+
+    vim.lsp.config('clangd', {
+      filetypes = { 'c', 'cpp', 'cc' },
+    })
 
     vim.keymap.set("n", "<space>f", function()
+      vim.lsp.buf.format()
+    end)
+
+    vim.keymap.set("v", "<space>f", function()
       vim.lsp.buf.format()
     end)
 
@@ -54,7 +62,7 @@ return {
           mode = mode or 'n'
           vim.keymap.set(mode, keys, func, { buffer = args.buf, desc = 'LSP: ' .. desc })
         end
-
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "rounded" }) end, { buffer = args.buf })
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')

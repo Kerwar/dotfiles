@@ -29,12 +29,12 @@ return {
     require("config.telescope.multigrep").setup()
   end,
   keys = {
-    { "<leader>ff", require("telescope.builtin").find_files,  desc = "[F]ind [F]ile" },
-    { "<leader>fh", require("telescope.builtin").help_tags,   desc = "[F]ind [H]elp" },
-    { "<leader>ft", require("telescope.builtin").builtin,     desc = "[F]ind [T]elescope" },
-    { "<leader>fg", require("telescope.builtin").live_grep,   desc = "[F]ind by [G]rep" },
-    { "<leader>fw", require("telescope.builtin").grep_string, desc = "[F]ind [W]ord under cursor" },
-    { "<leader>fr", require("telescope.builtin").live_grep,   desc = "[F]ind [R]esume" },
+    { "<leader>ff", function() require("telescope.builtin").find_files() end,  desc = "[F]ind [F]ile" },
+    { "<leader>fh", function() require("telescope.builtin").help_tags() end,   desc = "[F]ind [H]elp" },
+    { "<leader>ft", function() require("telescope.builtin").builtin() end,     desc = "[F]ind [T]elescope" },
+    { "<leader>fg", function() require("telescope.builtin").live_grep() end,   desc = "[F]ind by [G]rep" },
+    { "<leader>fw", function() require("telescope.builtin").grep_string() end, desc = "[F]ind [W]ord under cursor" },
+    { "<leader>fr", function() require("telescope.builtin").resume() end,      desc = "[F]ind [R]esume" },
     {
       "<leader>en",
       function()
