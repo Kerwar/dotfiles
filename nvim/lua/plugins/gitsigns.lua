@@ -17,9 +17,9 @@
 -- 	},
 -- }
 return {
-	"mhinz/vim-signify",
-	lazy = false,
-	keys = {
-		{ "<leader>shk", ":SignifyHunkDiff<CR>", desc = "SignifyHunkDiff", silent = true },
-	},
+  "mhinz/vim-signify",
+  lazy = false,
+  keys = {
+    { "<leader>shk", ":SignifyHunkDiff<CR>", desc = "SignifyHunkDiff", silent = true },
+  },
 }
