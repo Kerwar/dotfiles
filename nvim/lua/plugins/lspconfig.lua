@@ -29,6 +29,7 @@ return {
       },
       cmake = {
       },
+      rust_analyzer = {},
       zls = {}
     }
 
