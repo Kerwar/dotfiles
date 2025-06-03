@@ -11,7 +11,17 @@ return {
     -- C-n/C-p or Up/Down: Select next/previous item
     -- C-e: Hide menu
     -- C-k: Toggle signature help (if signature.enabled = true)
-    -- keymap = { preset = 'default' },
+    keymap = {
+      preset = 'default',
+      ['<C-n>'] = {
+        'snippet_forward',
+        'select_next'
+      },
+      ['<C-p>'] = {
+        'snippet_backward',
+        'select_prev'
+      },
+    },
 
     appearance = {
       -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -19,6 +29,11 @@ return {
     },
 
     completion = { documentation = { auto_show = false } },
+
+    cmdline = {
+      keymap = { preset = 'inherit' },
+      completion = { menu = { auto_show = true } },
+    },
   },
   opts_extend = { "sources.default" }
 }
