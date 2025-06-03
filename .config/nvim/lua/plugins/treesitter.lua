@@ -3,8 +3,9 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   branch = "main",
+  lazy = false,
   opts = {
-    ensure_installed = {
+    install = {
       "bash",
       "c",
       "cpp",

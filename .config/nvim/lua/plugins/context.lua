@@ -1,4 +1,15 @@
+return {}
 -- Shows the current context of the cursor, function, control flows, etc.
-return {
-  "nvim-treesitter/nvim-treesitter-context",
-}
+-- return { "nvim-treesitter/nvim-treesitter-context",
+--   dependencies = {
+--     "nvim-treesitter/nvim-treesitter",
+--   },
+--   event = "BufReadPre",
+--   keys = {
+--     "[c",
+--     function()
+--       require("treesitter-context").go_to_context(vim.v.count1)
+--     end,
+--     silent = true
+--   }
+-- }
