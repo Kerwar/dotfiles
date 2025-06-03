@@ -30,6 +30,7 @@ return {
       cmake = {
       },
       rust_analyzer = {},
+      slint_lsp = {},
       zls = {}
     }
 
