@@ -21,13 +21,16 @@ else
   # Create the third window
   tmux new-window -t "$SESSION_NAME":3 -n "config" -c ~/.config/nvim
 
-  # Create the fourth window with multiple panes
-  tmux new-window -t "$SESSION_NAME":4 -n "debug"
+  # Create the fourth window in Pos64Src
+  tmux new-window -t "$SESSION_NAME":4 -n "Pos" -c ~/prj/Pos64Src
 
-  # Split the fourth window into 4 panes
-  tmux split-window -h -t "$SESSION_NAME":4.0 # Split horizontally (creates 2 panes)
-  tmux split-window -v -t "$SESSION_NAME":4.0 # Split vertically in the first pane
-  tmux split-window -v -t "$SESSION_NAME":4.2 # Split vertically in the second pane (which is now pane 3.2)
+  # Create the fifth window with multiple panes
+  tmux new-window -t "$SESSION_NAME":5 -n "debug"
+
+  # Split the fifth window into 4 panes
+  tmux split-window -h -t "$SESSION_NAME":5.0 # Split horizontally (creates 2 panes)
+  tmux split-window -v -t "$SESSION_NAME":5.0 # Split vertically in the first pane
+  tmux split-window -v -t "$SESSION_NAME":5.2 # Split vertically in the second pane (which is now pane 3.2)
 
   # Select the first window to start in
   tmux select-window -t "$SESSION_NAME":1
