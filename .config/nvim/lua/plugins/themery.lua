@@ -2,7 +2,7 @@ return {
   "zaldih/themery.nvim",
   lazy = false,
   opts = {
-    themes = { "bluloco", "bamboo", "rose-pine", "default" },
+    themes = { "bluloco", "bamboo", "default", "gruvbox", "rose-pine", "vscode" },
     livePreview = true,
   }
 }
