@@ -18,6 +18,11 @@ end, { desc = "[P]revious [E]error" })
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal mode" })
 vim.keymap.set("t", "jk", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal mode" })
 
+-- Quickfix list
+vim.keymap.set("n", "<leader>qo", "<Cmd>copen<CR>", { desc = "[Q]uickfix list [O]pen" })
+vim.keymap.set("n", "<leader>qc", "<Cmd>cclose<CR>", { desc = "[Q]uickfix list [C]lose" })
+vim.keymap.set("n", "<leader>qn", "<Cmd>cnext<CR>", { desc = "[Q]uickfix list [N]ext" })
+vim.keymap.set("n", "<leader>qp", "<Cmd>cprev<CR>", { desc = "[Q]uickfix list [P]revious" })
 -- Keybinds to make split navigation easier.
 -- vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 -- vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
