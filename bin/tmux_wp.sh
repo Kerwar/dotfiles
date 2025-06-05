@@ -3,6 +3,12 @@
 # Set the session name to the current directory's name
 SESSION_NAME=$(basename "$(pwd)")
 
+# Desired IP address
+WORK_IP="172.31.2.63"
+
+# Get the first IP address from `hostname -I`
+CURRENT_IP=$(hostname -I | awk '{print $1}')
+
 # Check if a tmux session with the same name already exists
 tmux has-session -t "$SESSION_NAME" 2>/dev/null
 
@@ -21,16 +27,19 @@ else
   # Create the third window
   tmux new-window -t "$SESSION_NAME":3 -n "config" -c ~/.config/nvim "nvim"
 
-  # Create the fourth window in Pos64Src
-  tmux new-window -t "$SESSION_NAME":4 -n "Pos" -c ~/prj/Pos64Src "nvim"
-
-  # Create the fifth window with multiple panes
-  tmux new-window -t "$SESSION_NAME":5 -n "debug"
+  # Create the fourth window with multiple panes
+  tmux new-window -t "$SESSION_NAME":4 -n "debug"
 
   # Split the fifth window into 4 panes
-  tmux split-window -h -t "$SESSION_NAME":5.0 # Split horizontally (creates 2 panes)
-  tmux split-window -v -t "$SESSION_NAME":5.0 # Split vertically in the first pane
-  tmux split-window -v -t "$SESSION_NAME":5.2 # Split vertically in the second pane (which is now pane 3.2)
+  tmux split-window -h -t "$SESSION_NAME":4.0 # Split horizontally (creates 2 panes)
+  tmux split-window -v -t "$SESSION_NAME":4.0 # Split vertically in the first pane
+  tmux split-window -v -t "$SESSION_NAME":4.2 # Split vertically in the second pane (which is now pane 3.2)
+
+  # Create the fifth window in Pos64Src
+  if [ "$CURRENT_IP" == "$WORK_IP" ]; then
+    tmux new-window -t "$SESSION_NAME":5 -n "Pos" -c ~/prj/Pos64Src "nvim"
+  fi
+    echo "Current IP ($CURRENT_IP) does not match the desired IP ($WORK_IP)."
 
   # Select the first window to start in
   tmux select-window -t "$SESSION_NAME":1
