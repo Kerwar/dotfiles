@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 return {
   "folke/snacks.nvim",
   lazy = false,
@@ -30,7 +31,8 @@ return {
     { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
     { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
     { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
-    { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
+    { "<leader>fr",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
+    { "<leader>fw",      function() Snacks.picker.grep_word() end,                               desc = "Word or visual",        mode = { "n", "x" } },
 
     { "grr",             function() Snacks.picker.lsp_references() end,                          nowait = true,                  desc = "References" },
     { "gri",             function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
