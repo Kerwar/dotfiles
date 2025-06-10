@@ -19,13 +19,13 @@ else
   echo "Creating new tmux session: $SESSION_NAME"
 
   # Create a new detached tmux session with the first window
-  tmux new-session -d -s "$SESSION_NAME" -n "nvim" "nvim"
+  tmux new-session -d -s "$SESSION_NAME" -n "nvim" "nvim; bash"
 
   # Create the second window
   tmux new-window -t "$SESSION_NAME":2 -n "build"
 
   # Create the third window
-  tmux new-window -t "$SESSION_NAME":3 -n "config" -c ~/.config/nvim "nvim"
+  tmux new-window -t "$SESSION_NAME":3 -n "config" -c ~/.config/nvim "nvim; bash"
 
   # Create the fourth window with multiple panes
   tmux new-window -t "$SESSION_NAME":4 -n "debug"
