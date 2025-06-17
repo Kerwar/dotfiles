@@ -24,6 +24,7 @@ return {
   config = function()
     local servers = {
       lua_ls = {},
+      bash_ls = {},
       clangd = {
         filetypes = { 'c', 'cpp', 'cc' },
       },
