@@ -10,9 +10,7 @@ WORK_IP="172.31.2.63"
 CURRENT_IP=$(hostname -I | awk '{print $1}')
 
 # Check if a tmux session with the same name already exists
-tmux has-session -t "$SESSION_NAME" 2>/dev/null
-
-if [ $? -eq 0 ]; then
+if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
   echo "Session '$SESSION_NAME' already exists. Attaching to it."
   tmux attach-session -t "$SESSION_NAME"
 else
@@ -38,8 +36,9 @@ else
   # Create the fifth window in Pos64Src
   if [ "$CURRENT_IP" == "$WORK_IP" ]; then
     tmux new-window -t "$SESSION_NAME":5 -n "Pos" -c ~/prj/Pos64Src "nvim"
-  fi
+else
     echo "Current IP ($CURRENT_IP) does not match the desired IP ($WORK_IP)."
+  fi
 
   # Select the first window to start in
   tmux select-window -t "$SESSION_NAME":1
