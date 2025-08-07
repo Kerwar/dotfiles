@@ -27,6 +27,8 @@ return {
     local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     vim.lsp.config("*", { capabilities = capabilities })
+    vim.lsp.config("bash_ls",
+      { capabilities = capabilities, cmd = { 'bash-language-server', 'start' }, filetypes = { "sh" } })
     vim.lsp.enable({
       "bash_ls",
       "clangd",
