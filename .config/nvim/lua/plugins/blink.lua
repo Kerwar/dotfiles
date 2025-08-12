@@ -14,11 +14,9 @@ return {
     keymap = {
       preset = 'default',
       ['<C-n>'] = {
-        'snippet_forward',
         'select_next'
       },
       ['<C-p>'] = {
-        'snippet_backward',
         'select_prev'
       },
     },
