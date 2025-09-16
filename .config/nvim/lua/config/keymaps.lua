@@ -4,7 +4,23 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist, { desc = "Open [D]iagnostic [Q]uickfix list" })
+vim.keymap.set("n", "<leader>dh",
+  function()
+    vim.diagnostic.setqflist { severity = { min = vim.diagnostic.severity.HINT } }
+  end,
+  { desc = "Open [D]iagnostic [H]ints Quickfix list" })
+vim.keymap.set("n", "<leader>di", function()
+    vim.diagnostic.setqflist { severity = { min = vim.diagnostic.severity.INFO } }
+  end,
+  { desc = "Open [D]iagnostic [I]nfo Quickfix list" })
+vim.keymap.set("n", "<leader>dw", function()
+    vim.diagnostic.setqflist { severity = { min = vim.diagnostic.severity.WARN } }
+  end,
+  { desc = "Open [D]iagnostic [W]arning Quickfix list" })
+vim.keymap.set("n", "<leader>de", function()
+    vim.diagnostic.setqflist { title = 'Errors', severity = vim.diagnostic.severity.ERROR }
+  end,
+  { desc = "Open [D]iagnostic [Q]uickfix list" })
 vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float, { desc = "[D]isplay [D]iagnostic" })
 
 vim.keymap.set("n", "<leader>ne", function()
@@ -19,12 +35,8 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal m
 vim.keymap.set("t", "jk", "<C-\\><C-n>:q<CR>", { desc = "Exit terminal mode" })
 
 -- Quickfix list
+vim.keymap.set("n", "<leader>q", "<Cmd>cwindow<CR>", { desc = "[Q]uickfix toggle" })
 vim.keymap.set("n", "<leader>qo", "<Cmd>copen<CR>", { desc = "[Q]uickfix list [O]pen" })
 vim.keymap.set("n", "<leader>qc", "<Cmd>cclose<CR>", { desc = "[Q]uickfix list [C]lose" })
 vim.keymap.set("n", "<leader>qn", "<Cmd>cnext<CR>", { desc = "[Q]uickfix list [N]ext" })
 vim.keymap.set("n", "<leader>qp", "<Cmd>cprev<CR>", { desc = "[Q]uickfix list [P]revious" })
--- Keybinds to make split navigation easier.
--- vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
--- vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
--- vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
--- vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
