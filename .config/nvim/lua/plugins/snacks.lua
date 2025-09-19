@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-global
 return {
   "folke/snacks.nvim",
+  version = "*",
   lazy = false,
   priority = 1000,
   opts = {
@@ -26,13 +27,13 @@ return {
     { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
     { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
     -- find
-    { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
-    { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-    { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
-    { "<leader>fg",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
-    { "<leader>fp",      function() Snacks.picker.projects() end,                                desc = "Projects" },
-    { "<leader>fr",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
-    { "<leader>fw",      function() Snacks.picker.grep_word() end,                               desc = "Word or visual",        mode = { "n", "x" } },
+    { "<leader>/b",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+    { "<leader>/c",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+    { "<leader>/f",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
+    { "<leader>/g",      function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
+    { "<leader>/p",      function() Snacks.picker.projects() end,                                desc = "Projects" },
+    { "<leader>/r",      function() Snacks.picker.resume() end,                                  desc = "Resume" },
+    { "<leader>/w",      function() Snacks.picker.grep_word() end,                               desc = "Word or visual",        mode = { "n", "x" } },
 
     { "grr",             function() Snacks.picker.lsp_references() end,                          nowait = true,                  desc = "References" },
     { "gri",             function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
