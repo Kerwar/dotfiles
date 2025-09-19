@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  version = "*",
   dependencies = {
     {
       "folke/lazydev.nvim",
@@ -33,6 +34,7 @@ return {
       "bash_ls",
       "clangd",
       "cmake",
+      "dts_lsp",
       "lua_ls",
       "rust_analyzer",
       "slint_lsp",

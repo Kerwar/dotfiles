@@ -1,5 +1,6 @@
 return {
   "christoomey/vim-tmux-navigator",
+  version = "*",
   keys = {
     { "<C-h>", "<cmd> TmuxNavigateLeft<Cr>",  "Window left" },
     { "<C-l>", "<cmd> TmuxNavigateRight<Cr>", "Window right" },

@@ -18,6 +18,7 @@
 -- }
 return {
   "mhinz/vim-signify",
+  version = "*",
   lazy = false,
   keys = {
     { "<leader>shk", ":SignifyHunkDiff<CR>", desc = "SignifyHunkDiff", silent = true },

@@ -1,5 +1,6 @@
 return {
   "ribru17/bamboo.nvim",
+  version = "*",
   dependencies = {
     'uloco/bluloco.nvim',
     {

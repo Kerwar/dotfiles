@@ -2,6 +2,7 @@ return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
+  version = "*",
 
   keys = {
     { "<leader>h", function() require("harpoon"):list():add() end },
