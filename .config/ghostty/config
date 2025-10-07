@@ -1,0 +1,11 @@
+font-family = JetBrainsMono Nerd Font
+adjust-cell-width = -10%
+window-colorspace = display-p3
+
+font-synthetic-style = false
+
+shell-integration-features = ssh-env
+
+# Colors
+term = xterm-ghostty
+theme = Rose Pine
