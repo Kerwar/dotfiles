@@ -2,12 +2,10 @@ return {
   "ribru17/bamboo.nvim",
   version = "*",
   dependencies = {
-    'uloco/bluloco.nvim',
     {
       "rose-pine/neovim",
       name = "rose-pine",
     },
-    'rktjmp/lush.nvim',
     'Mofiqul/vscode.nvim',
     "ellisonleao/gruvbox.nvim",
     "marko-cerovac/material.nvim",
