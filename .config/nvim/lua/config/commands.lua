@@ -6,6 +6,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'cc' },
+  callback = function() vim.treesitter.start() end,
+})
+
 vim.api.nvim_create_user_command('ToggleInlayHints', function()
     vim.g.inlay_hints = not vim.g.inlay_hints
     vim.notify(string.format('%s inlay hints...', vim.g.inlay_hints and 'Enabling' or 'Disabling'), vim.log.levels.INFO)
