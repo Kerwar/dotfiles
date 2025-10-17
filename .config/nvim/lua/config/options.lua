@@ -68,6 +68,6 @@ vim.o.winborder = "rounded"
 -- To be able to proccess windows saved files.
 vim.o.fileformats = "unix,dos"
 
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
 
 vim.g.copilot_auth_provider_url = 'https://etraid.ghe.com'
