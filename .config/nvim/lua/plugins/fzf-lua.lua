@@ -5,6 +5,7 @@ return {
   {
     'ibhagwan/fzf-lua',
     cmd = 'FzfLua',
+    version = '*',
     keys = {
       {
         '<leader>fb',
@@ -38,12 +39,12 @@ return {
         desc = 'Search current buffer',
         mode = { 'n', 'x' },
       },
+      { '<leader>/', '<cmd>FzfLua live_grep<cr>',                desc = 'Grep' },
+      { '<leader>/', '<cmd>FzfLua grep_visual<cr>',              desc = 'Grep',                   mode = 'x' },
       { '<leader>/b', '<cmd>FzfLua buffers<cr>',                  desc = 'Buffers' },
       { '<leader>/c', '<cmd>FzfLua highlights<cr>',               desc = 'Highlights' },
       { '<leader>/d', '<cmd>FzfLua lsp_document_diagnostics<cr>', desc = 'Document diagnostics' },
       { '<leader>/f', '<cmd>FzfLua files<cr>',                    desc = 'Find files' },
-      { '<leader>/g', '<cmd>FzfLua live_grep<cr>',                desc = 'Grep' },
-      { '<leader>/g', '<cmd>FzfLua grep_visual<cr>',              desc = 'Grep',                   mode = 'x' },
       { '<leader>/h', '<cmd>FzfLua help_tags<cr>',                desc = 'Help' },
       { '<leader>/r', '<cmd>FzfLua oldfiles<cr>',                 desc = 'Recently opened files' },
       { '<leader>/w', '<cmd>FzfLua grep_cword<cr>',               desc = 'Grep word under cursor' },
